@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Document</title>
+  <script>
+    function validateNumber(event) {
+  const keyCode = event.keyCode;
+
+  const excludedKeys = [8, 37, 39, 46];
+
+  if (!((keyCode >= 48 && keyCode <= 57) ||
+    (keyCode >= 96 && keyCode <= 105) ||
+    (excludedKeys.includes(keyCode)))) {
+    event.preventDefault();
+  }
+}
+
+  </script>
+</head>
+<body>
+  <h1>User Details Form</h1>
+
+  <form id="myform" method="get"> 
+
+    <label for="name">Name: </label>
+    <input type="text" name="name" id="name" maxlength="75"><br><br>
+
+    <label for="email">Email: </label>
+    <input type="text" name="email" id="email"><br><br>
+
+    <label for="address">Address: </label>
+    <textarea name="address" id="address" maxlength="50"></textarea><br><br>
+
+    <label for="contactno">Contact No: </label>
+    <input type="tel" name="contactno" id="contactno" onkeydown="validateNumber(event)" maxlength="10"><br><br>
+
+    <label for="dob">D.O.B: </label>
+    <input type="date" name="dob" id="dob" >
+
+    <div id="gender">
+      <p>Gender:</p>
+      <input type="radio" name="gender" id="male" value="Male">
+      <label for="male">Male</label>
+      <input type="radio" name="gender" id="female" value="Female">
+      <label for="female">Female</label>
+      <input type="radio" name="gender" id="others" value="Others">
+      <label for="others">Others</label><br><br>
+    </div>
+
+    <label>Education: </label>
+    <select id="education">
+      <option id="none"></option>
+      <option id="tenth">10th</option>
+      <option id="twelth">12th</option>
+      <option id="ug">UG</option>
+      <option id="pg">PG</option>
+    </select><br><br>
+
+    <label for="pan">Pan Card No: </label>
+    <input type="text" name="pan" id="pan"><br><br>
+
+    <label for="username">Username: </label>
+    <input type="text" name="username" id="username" maxlength="25"><br><br>
+
+    <label for="password" >Password: </label>
+    <input type="password" name="password" id="password"><br><br>
+
+    <label for="confirmpass">Confirm Password: </label>
+    <input type="password" name="confirmpass" id="confirmpass"><br><br>
+
+    <label for="profilepic">Profile Picture: </label>
+    <input type="file" name="profilepic" id="profilepic"><br><br>
+
+    <input type="submit">
+    <input type="reset">
+  </form>
+
+  <script src="/script.js"></script>
+</body>
+</html>
